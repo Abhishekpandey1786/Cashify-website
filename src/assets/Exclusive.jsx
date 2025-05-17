@@ -1,128 +1,126 @@
 import React from "react";
-
-const stores = [
+import img1 from '../assets/g1.webp'
+import img2 from '../assets/g2.webp'
+import img3 from '../assets/g3.webp'
+import img4 from '../assets/g4.webp'
+import img5 from '../assets/g5.webp'
+import img6 from '../assets/g6.webp'
+import img7 from '../assets/g7.webp'
+const phones = [
   {
-    city: "GURGAON",
-    title: "Cashify Buy, Sell and Repair Mobile Store Sushant Lok",
-    address: "GF 133, Sushant Vyapar Kendra, Sushant Lok, Gurgaon",
-    timings: "10:00 AM - 09:00 PM",
+    img: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg",
+    name: "Apple iPhone 11",
+    specs: "4 GB/128 GB",
+    price: "₹16,020",
   },
   {
-    city: "GURGAON",
-    title: "Cashify Buy, Sell and Repair Mobile Store Sec 14 Gurgaon",
-    address:
-      "Shop No.13, Old Delhi road, Opp. Plaza Solitaire Hotel Bank market, Gurugram",
-    timings: "10:00 AM - 09:00 PM",
+    img: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg",
+    name: "Apple iPhone 11",
+    specs: "4 GB/64 GB",
+    price: "₹14,920",
   },
   {
-    city: "GURGAON",
-    title: "Cashify Buy, Sell and Repair Mobile Store MG Road Gurgaon",
-    address: "MG Road Metro, Exit Gate no 2, M.G. Road Gurgaon",
-    timings: "09:00 AM - 09:00 PM",
+    img: img7,
+    name: "Apple iPhone XR",
+    specs: "3 GB/64 GB",
+    price: "₹10,340",
+  },
+  {
+    img: img6,
+    name: "Apple iPhone 7",
+    specs: "2 GB/32 GB",
+    price: "₹4,960",
+  },
+  {
+    img: img5,
+    name: "Apple iPhone 12",
+    specs: "4 GB/128 GB",
+    price: "₹20,520",
+  },
+  {
+    img: img4,
+    name: "Apple iPhone 12",
+    specs: "4 GB/64 GB",
+    price: "₹19,390",
+  },
+  {
+    img: img3,
+    name: "Xiaomi Redmi Note 8",
+    specs: "4 GB/64 GB",
+    price: "₹4,010",
+  },
+  {
+    img: img2,
+    name: "Xiaomi Redmi Note 5 Pro",
+    specs: "4 GB/64 GB",
+    price: "₹3,000",
+  },
+  {
+    img: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-x-new-1.jpg",
+    name: "Apple iPhone X",
+    specs: "3 GB/64 GB",
+    price: "₹10,750",
+  },
+  {
+    img: img1,
+    name: "Xiaomi Redmi Note 7 Pro",
+    specs: "4 GB/64 GB",
+    price: "₹3,940",
   },
 ];
 
-const Exclusive = () => {
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      {/* Heading */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
-        <h2 className="text-xl sm:text-2xl font-bold">Our Exclusive Stores</h2>
-        <a
-          href="#"
-          className="text-teal-600 font-semibold text-sm hover:underline"
-        >
-          View all stores
-        </a>
-      </div>
-
-      {/* Stats */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-6">
-        <div className="flex items-center text-gray-700 text-sm font-semibold">
-          <svg
-            className="h-5 w-5 text-teal-500 mr-2"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <path
-              d="M12 8v4l3 3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          200+ Experience Centres
+const Exclusive = () => (
+  <section className="py-8 bg-white">
+    <div className="max-w-7xl mx-auto px-2 sm:px-4">
+      <h2 className="text-xl font-bold text-black mb-4">Top Selling Mobile Phones</h2>
+      {/* Table for desktop, cards for mobile */}
+      <div className="bg-white rounded-lg overflow-hidden shadow border border-gray-100">
+        {/* Table Head */}
+        <div className="hidden md:grid grid-cols-12 bg-gray-100 font-bold text-black text-left text-sm">
+          <div className="col-span-6 py-3 px-4">Top Selling Mobile Phones</div>
+          <div className="col-span-3 py-3 px-4">Price</div>
+          <div className="col-span-3 py-3 px-4"></div>
         </div>
-        <div className="flex items-center text-gray-700 text-sm font-semibold">
-          <svg
-            className="h-5 w-5 text-teal-500 mr-2"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path d="M9.049 2.927C9.469 2.021 10.531 2.021 10.951 2.927l1.286 2.773a1 1 0 00.757.553l3.046.444c.969.141 1.357 1.33.654 2.012l-2.203 2.147a1 1 0 00-.287.885l.52 3.03c.166.967-.848 1.704-1.713 1.25l-2.722-1.432a1 1 0 00-.928 0l-2.722 1.432c-.865.454-1.879-.283-1.713-1.25l.52-3.03a1 1 0 00-.287-.885L2.306 8.709c-.703-.682-.315-1.87.654-2.012l3.046-.444a1 1 0 00.757-.553l1.286-2.773z" />
-          </svg>
-          4.5+ Star Ratings
-        </div>
-      </div>
-
-      {/* Store Cards + Pincode */}
-      <div className="bg-gray-50 rounded-xl p-5">
-        {/* Pincode Input */}
-        <div className="flex flex-wrap justify-center items-center mb-6 gap-2">
-          <input
-            type="text"
-            placeholder="Enter Pincode"
-            className="px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 w-full sm:w-64"
-          />
-          <button className="bg-white border border-gray-300 rounded px-3 py-2 hover:bg-gray-100">
-            <svg
-              className="h-5 w-5 text-gray-500"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
+        {/* Table Body */}
+        <div>
+          {phones.map((phone, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col md:grid md:grid-cols-12 items-center border-b last:border-b-0"
             >
-              <circle cx="11" cy="11" r="8" />
-              <path d="M21 21l-4.35-4.35" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Store Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {stores.map((store, idx) => (
-            <div key={idx} className="bg-white rounded-lg shadow-sm p-4">
-              <span className="bg-black text-white text-xs px-2 py-0.5 rounded mb-2 inline-block">
-                {store.city}
-              </span>
-              <div className="font-bold mb-1">{store.title}</div>
-              <div className="text-sm text-gray-600 mb-1">{store.address}</div>
-              <div className="text-sm text-gray-500 mb-2">
-                Timings: {store.timings}
+              {/* Phone Info */}
+              <div className="flex items-center col-span-6 w-full py-4 px-4">
+                <img
+                  src={phone.img}
+                  alt={phone.name}
+                  className="w-12 h-16 object-contain rounded mr-4 border"
+                />
+                <div>
+                  <div className="font-semibold text-black text-sm">
+                    {phone.name}
+                  </div>
+                  <div className="text-xs text-gray-700 font-semibold">
+                    ({phone.specs})
+                  </div>
+                </div>
               </div>
-              <a
-                href="#"
-                className="text-teal-600 text-sm font-semibold hover:underline flex items-center"
-              >
-                View Details
-                <svg
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+              {/* Price */}
+              <div className="col-span-3 w-full flex flex-col items-start md:items-center px-4">
+                <span className="text-xs text-gray-500">Get Upto</span>
+                <span className="text-lg font-bold text-[#ff5f5f]">{phone.price}</span>
+              </div>
+              {/* Button */}
+              <div className="col-span-3 w-full flex justify-end px-4 pb-4 md:pb-0">
+                <button className="bg-[#34d1c5] hover:bg-[#25b3a8] text-white font-semibold px-7 py-2 rounded transition text-sm w-full md:w-auto">
+                  Sell Now
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 export default Exclusive;

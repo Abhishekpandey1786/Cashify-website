@@ -1,62 +1,65 @@
 import React from "react";
-import phoneImg from "./d1.webp";
-import laptopImg from "./d2.webp";
-import tvImg from "./d3.webp";
-import tabletImg from "./d4.webp";
-import consoleImg from "./d5.webp";
-import watchImg from "./d6.webp";
-import speakerImg from "./d7.webp";
-
-const devices = [
-  { label: "Sell Phone", img: phoneImg },
-  { label: "Sell Laptop", img: laptopImg },
-  { label: "Sell TV", img: tvImg },
-  { label: "Sell Tablet", img: tabletImg },
-  { label: "Sell Gaming Consoles", img: consoleImg },
-  { label: "Sell Smartwatch", img: watchImg },
-  { label: "Sell Smart Speakers", img: speakerImg },
+import img1 from '../assets/h1.webp'
+import img2 from '../assets/h2.webp'
+import img3 from '../assets/h1.webp'
+import img4 from '../assets/h2.webp'
+// Placeholder images, replace these src with your actual images as needed
+const deals = [
+  {
+    title: "Exchange Offers",
+    bg: "bg-[#c5f3ee]",
+    img: img1
+  },
+  {
+    title: "Refurbished Device Offers",
+    bg: "bg-[#d5d3f6]",
+    img: img2
+  },
+   {
+    title: "Refurbished Device Offers",
+    bg: "bg-[#c5f3ee]",
+    img: img3
+  }, {
+    title: "Refurbished Device Offers",
+    bg: "bg-[#d5d3f6]",
+    img: img2
+  },
 ];
 
-const Device = () => {
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center sm:text-left">
-        Sell Your Old Device Now
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {devices.map((device, index) => (
+const Device = () => (
+  <section className="bg-[#f7f8fa] py-8">
+    <div className="max-w-7xl mx-auto px-4">
+      <h2 className="text-xl font-bold text-black mb-4">Hot Deals</h2>
+      <div className="flex flex-wrap gap-4">
+        {deals.map((deal, idx) => (
           <div
-            key={index}
-            className="flex flex-col items-center  rounded-lg py-4 px-4 shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+            key={deal.title}
+            className={`${deal.bg} rounded-xl flex-1 min-w-[260px] max-w-xs flex justify-between items-end p-5 relative`}
+            style={{ height: 160 }}
           >
+            <div className="flex flex-col justify-between h-full">
+              <span className="text-black font-bold text-lg leading-tight">
+                {deal.title.split(" ").map((word, i, arr) =>
+                  i === arr.length - 1 ? word : word + " "
+                ).reduce((a, b) => [a, <br key={b}/>, b])}
+              </span>
+              <button className="mt-4 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow">
+                <svg width="18" height="18" fill="none" stroke="#3ec6b8" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
             <img
-              src={device.img}
-              alt={device.label}
-              className="h-16 mb-2 object-contain"
+              src={deal.img}
+              alt="phone"
+              className="absolute right-5 bottom-5 w-[400px] h-[120px] object-contain"
+              draggable="false"
             />
-            <span className="text-sm font-semibold text-gray-800 text-center">
-              {device.label}
-            </span>
           </div>
         ))}
-
-        {/* Sell More Card */}
-        <div
-          key="sell-more"
-          className="flex flex-col items-center justify-center  rounded-lg py-4 px-4 shadow-sm hover:shadow-md transition"
-        >
-          <div className="flex space-x-1 mb-2">
-            <span className="block h-2 w-2 bg-teal-400 rounded-full"></span>
-            <span className="block h-2 w-2 bg-teal-400 rounded-full"></span>
-            <span className="block h-2 w-2 bg-teal-400 rounded-full"></span>
-          </div>
-          <span className="text-sm font-semibold text-gray-800 text-center">
-            Sell More
-          </span>
-        </div>
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 export default Device;

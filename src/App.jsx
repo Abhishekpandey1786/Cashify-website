@@ -11,6 +11,8 @@ import Banner from './assets/Banner';
 import Tranding from './assets/Tranding';
 import Last from './assets/Last'
 import Footer from './assets/Footer';
+import Customer from './assets/Customer'
+import About from './assets/About'
 function App() {
   
 
@@ -24,9 +26,11 @@ function App() {
       <Refurbished/>
       <Laptop/>
       <Exclusive/>
-      <Banner/>
+      {/* <Banner/> */}
+      <Customer/>
       <Tranding/>
       <Last/>
+      <About/>
       <Footer/>
     </div>
     

@@ -18,7 +18,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden bg-emerald-400 py-4 relative">
+    <div className="w-full overflow-hidden bg-black py-6  relative border-t-4 border-red-600">
       {/* Inline <style> for animation */}
       <style>
         {`
@@ -40,7 +40,7 @@ const Banner = () => {
             key={index}
             src={`https://s3no.cashify.in/estore/${id}.webp?p=default&s=lg`}
             alt={`Banner ${index + 1}`}
-            className="h-16 w-auto object-contain"
+            className="h-20 w-auto object-contain border-2 border-red-600 rounded-md hover:border-red-400 hover:scale-105 transition duration-300"
           />
         ))}
       </div>

@@ -1,78 +1,60 @@
 import React from "react";
-import img1 from "./s1.webp";
-import img2 from "./s2.webp";
-import img3 from "./s3.webp";
-import img4 from "./s4.webp";
-import img5 from "./s5.webp";
-import img6 from "./s6.webp";
-import img7 from "./s7.webp";
-import img8 from "./s8.webp";
-import img9 from "./s9.webp";
-
+import img1 from '../assets/ex1.webp'
+import img2 from '../assets/ex2.webp'
+import img3 from '../assets/ex3.webp'
+// Add image URLs here
 const services = [
   {
-    label: "Sell Phone",
-    img: img1,
+    id: 1,
+    title: "Check Price",
+    description:
+      "Select your device & tell us about its current condition, and our advanced AI tech will tailor make the perfect price for you.",
+    image: img1, 
   },
   {
-    label: "Buy Phone",
-    img: img2,
+    id: 2,
+    title: "Schedule Pickup",
+    description:
+      "Book a free pickup from your home or work at a time slot that best suits your convenience.",
+    image: img2, 
   },
   {
-    label: "Buy Laptops",
-    img: img3,
-  },
-  {
-    label: "Repair Phone",
-    img: img4,
-  },
-  {
-    label: "Repair Laptop",
-    img: img5,
-  },
-  {
-    label: "Find New Phone",
-    img: img6,
-  },
-  {
-    label: "Nearby Stores",
-    img: img7,
-  },
-  {
-    label: "Buy Smartwatches",
-    img: img8,
-  },
-  {
-    label: "Recycle",
-    img: img9,
+    id: 3,
+    title: "Get Paid",
+    description:
+      "Did we mention you get paid as soon as our executive picks up your device? It’s instant payment all the way!",
+    image: img3, 
   },
 ];
 
-const Service = () => {
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center sm:text-left">
-        Our Services
+const Service = () => (
+  <section className="bg-white py-12">
+    <div className="max-w-7xl mx-auto px-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-black mb-10 text-left">
+        How Cashify Works
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center  rounded-lg py-4 px-2 shadow-sm hover:shadow-md transition duration-300 ease-in-out"
-          >
-            <img
-              src={service.img}
-              alt={service.label}
-              className="h-16 mb-2 object-contain"
-            />
-            <span className="text-sm font-semibold text-gray-800 text-center">
-              {service.label}
-            </span>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div key={service.id} className="flex flex-col items-center text-center">
+            <div className="mb-4">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-16 h-16 object-contain"
+              />
+            </div>
+            <div className="flex items-center mb-2">
+              <span className="w-7 h-7 flex items-center justify-center rounded-full bg-[#3ec6b8] text-white font-bold mr-2">
+                {service.id}
+              </span>
+              <span className="text-lg md:text-xl font-semibold text-black">{service.title}</span>
+            </div>
+            <p className="text-gray-700 text-sm md:text-base max-w-xs">{service.description}</p>
           </div>
         ))}
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 export default Service;
